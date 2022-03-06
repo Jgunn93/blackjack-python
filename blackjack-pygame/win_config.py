@@ -20,6 +20,17 @@ VEL = 3
 BACKGROUND = pygame.image.load(os.path.join('graphics', 'table_background.jpg'))
 
 def draw_window():
+    WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE | pygame.HWSURFACE | pygame.DOUBLEBUF)
     WIN.blit(BACKGROUND, (0,0))
-
-    pygame.display.update()
+    pygame.display.flip()
+    while True:
+        pygame.event.pump()
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            pygame.display.quit()
+        elif event.type == pygame.VIDEORESIZE:
+            WIN = pygame.display.set_mode(
+                event.dict['size'], pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.RESIZABLE)
+            WIN.blit(pygame.transform.scale(BACKGROUND, event.dict['size']), (0,0))
+            pygame.display.flip()
+    # pygame.display.update()
