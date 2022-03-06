@@ -3,6 +3,7 @@ import pygame
 import os
 from banking_pkg import *
 from win_config import *
+import random
 
 
 authorized_user = ""
