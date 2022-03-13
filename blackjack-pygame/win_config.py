@@ -3,7 +3,7 @@ import os
 pygame.font.init()
 pygame.mixer.init()
 
-WIDTH, HEIGHT = 900, 500
+WIDTH, HEIGHT = 1920, 1080
 WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE | pygame.HWSURFACE | pygame.DOUBLEBUF)
 pygame.display.set_caption("First doge")
 
@@ -17,7 +17,7 @@ BORDER = pygame.Surface.get_size(WIN)
 FPS = 60
 VEL = 3
 
-BACKGROUND = pygame.image.load(os.path.join('graphics', 'table_background.jpg'))
+BACKGROUND = pygame.image.load(os.path.join('graphics', 'table_1920_1080.jpg'))
 
 def draw_window():
     WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE | pygame.HWSURFACE | pygame.DOUBLEBUF)
